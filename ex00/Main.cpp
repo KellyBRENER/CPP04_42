@@ -6,16 +6,20 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:55:51 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/04 16:05:29 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:24:14 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
+/*avec methode*/
+std::cout<<"***utilisation de fonction virtual ou methode***\n"<<std::endl;
 const Animal* meta = new Animal();
 const Animal* j = new Dog();
 const Animal* i = new Cat();
@@ -24,6 +28,14 @@ std::cout << i->getType() << " " << std::endl;
 i->makeSound(); //will output the cat sound!
 j->makeSound();
 meta->makeSound();
+/*sans methode*/
+std::cout<<"***sans fonction virtual ou methode***\n"<<std::endl;
+const WrongAnimal* wrongmeta = new WrongAnimal();
+const WrongAnimal* wrongj = new WrongCat();
+std::cout << wrongj->getType() << " " << std::endl;
+std::cout << wrongmeta->getType() << " " << std::endl;
+wrongj->makeSound();
+wrongmeta->makeSound();
 return 0;
 }
 
