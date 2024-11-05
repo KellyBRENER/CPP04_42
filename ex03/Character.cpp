@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:08:00 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 15:17:29 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:34:47 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -69,12 +69,14 @@ std::string const &	Character::getName() const {
 void	Character::equip(AMateria* m) {
 	if (!m)
 		return;
-	for (int i = 0; i < 4; ++i) {
-		if (!_inventory[i]) {
+	for (int i = 0; i < 4; ++i)
+	{
+		if (!_inventory[i])
+		{
 			_inventory[i] = m;
 			std::cout<<_name<<" add a materia type '"<<_inventory[i]->getType()\
-<<"' at emplacement "<<i<<"in his inventory"<<std::endl;
-			break;
+<<"' at emplacement "<<i<<" in his inventory"<<std::endl;
+			return;
 		}
 	}
 }

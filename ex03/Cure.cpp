@@ -6,17 +6,17 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:48:52 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 15:19:17 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:39:48 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure") {
+Cure::Cure() : AMateria("cure") {
 	std::cout<<"Cure default constructor called"<<std::endl;
 }
 
-Cure::Cure(const Cure & src) : AMateria("Cure") {
+Cure::Cure(const Cure & src) : AMateria("cure") {
 	*this = src;
 	std::cout<<"Cure copy constructor called"<<std::endl;
 }
@@ -24,8 +24,8 @@ Cure::Cure(const Cure & src) : AMateria("Cure") {
 Cure&	Cure::operator=(const Cure& src) {
 	if (this == &src)
 		return *this;
-	*this = src;
-	return *this;
+	_type = src._type;
+		return *this;
 }
 
 Cure::~Cure() {

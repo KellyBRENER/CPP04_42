@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:16:13 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 15:31:30 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:18:29 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,7 +15,7 @@
 MateriaSource::MateriaSource() {
 	_stock = new AMateria*[4];
 	for (int i = 0; i < 4; ++i) {
-		_stock = NULL;
+		_stock[i] = NULL;
 	}
 	std::cout<<"MateriaSource default constructor called"<<std::endl;
 }
@@ -51,8 +51,9 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource& src) {
 
 void	MateriaSource::learnMateria(AMateria* m) {
 	for (int i = 0; i < 4; ++i) {
-		if (!_stock[i]) {
+		if (_stock[i] == NULL) {
 			_stock[i] = m;
+			break;
 		}
 	}
 }

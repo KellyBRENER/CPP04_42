@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:36:20 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 15:19:52 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:22:22 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -24,7 +24,7 @@ Ice::Ice(const Ice & src) : AMateria("ice") {
 Ice&	Ice::operator=(const Ice& src) {
 	if (this == &src)
 		return *this;
-	*this = src;
+	_type = src._type;
 	return *this;
 }
 
