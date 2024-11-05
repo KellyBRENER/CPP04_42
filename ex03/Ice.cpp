@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:36:20 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 11:47:24 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:19:52 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -33,8 +33,7 @@ Ice::~Ice() {
 }
 
 AMateria*	Ice::clone() const {
-	Ice	clone(*this);
-	return &clone;
+	return (new Ice(*this));
 }
 
 void	Ice::use(ICharacter& target) {

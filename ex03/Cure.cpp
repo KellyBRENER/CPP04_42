@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:48:52 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 11:51:45 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:19:17 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -33,8 +33,7 @@ Cure::~Cure() {
 }
 
 AMateria*	Cure::clone() const {
-	Cure	clone(*this);
-	return &clone;
+	return (new Cure(*this));
 }
 
 void	Cure::use(ICharacter& target) {

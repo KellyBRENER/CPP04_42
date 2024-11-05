@@ -1,30 +1,26 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 11:31:00 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 14:54:33 by kbrener-         ###   ########.fr       */
+/*   Created: 2024/11/05 14:41:04 by kbrener-          #+#    #+#             */
+/*   Updated: 2024/11/05 14:42:36 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
-#ifndef ICE_HPP
-#define ICE_HPP
-
-class	Ice : public AMateria {
-	public :
-		Ice();
-		Ice(const Ice& src);
-		~Ice();
-		Ice&	operator=(const Ice& src);
-
-		virtual AMateria*	clone() const;
-		virtual void	use(ICharacter& target);
-};
-
-#endif
+void	delete_AMateria_tab(AMateria** tab) {
+	if (tab) {
+		for (int i = 0; i < 4; ++i) {
+			if (tab[i]) {
+				delete tab[i];
+				tab[i] = NULL;
+			}
+		}
+		delete[] tab;
+		tab = NULL;
+	}
+}

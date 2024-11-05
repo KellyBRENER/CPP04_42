@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:03:27 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 13:40:28 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:17:01 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -18,7 +18,7 @@
 class	Character : public ICharacter {
 	protected:
 		std::string	_name;
-		AMateria**	_inventaire;
+		AMateria**	_inventory;
 	public :
 		Character();
 		Character(const std::string& name);

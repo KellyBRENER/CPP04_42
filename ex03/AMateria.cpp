@@ -6,11 +6,12 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:21:39 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 12:18:01 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:27:04 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 AMateria::AMateria() {
 	_type = "empty";
@@ -31,5 +32,6 @@ std::string const &	AMateria::getType() const {
 }
 
 void	AMateria::use(ICharacter& target) {
-
+	std::cout<<"an AMateria cannot be used, "<<target.getName()<<" can be quiet"\
+<<std::endl;
 }
