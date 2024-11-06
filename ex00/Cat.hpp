@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:47:38 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/04 16:05:01 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:44:28 by kbrener-         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "Animal.hpp"
 
@@ -17,12 +17,13 @@
 
 class Cat : public Animal
 {
-public:
-	Cat();
-	Cat(const Cat& src);
-	~Cat();
-	Cat&	operator=(const Cat& src);
-	virtual void	makeSound() const;
+	public:
+		Cat();
+		Cat(const Cat& src);
+		~Cat();
+		Cat&	operator=(const Cat& src);
+		/*member functions*/
+		virtual void	makeSound() const;
 };
 
 #endif

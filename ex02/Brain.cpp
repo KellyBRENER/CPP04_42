@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 09:39:36 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/06 15:21:00 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:58:57 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Brain::Brain() {
 }
 
 Brain::Brain(const Brain& src) {
+	ideas = new std::string[100];
 	*this = src;
 	std::cout<<"Brain copy constructor called"<<std::endl;
 }

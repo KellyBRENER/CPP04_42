@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:27:58 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/06 15:03:40 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:47:07 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ Animal::~Animal() {
 }
 
 Animal::Animal(const Animal& src) {
+	std::cout<<"Animal copy constructor called"<<std::endl;
 	*this = src;
 }
 
 Animal&	Animal::operator=(const Animal& src) {
+	std::cout<<"Animal assignation overload called"<<std::endl;
 	if (this == &src)
 		return *this;
 	type = src.type;

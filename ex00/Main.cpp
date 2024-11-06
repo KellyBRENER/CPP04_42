@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:55:51 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/06 15:33:24 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/06 17:10:20 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main()
-{
+int main() {
 /*avec methode*/
 std::cout<<"***utilisation de fonction virtual ou methode***\n"<<std::endl;
 const Animal* meta = new Animal();
@@ -28,17 +27,20 @@ std::cout << i->getType() << " " << std::endl;
 i->makeSound(); //will output the cat sound!
 j->makeSound();
 meta->makeSound();
+delete meta;
+delete j;
+delete i;
 /*sans methode*/
 std::cout<<"***sans fonction virtual ou methode***\n"<<std::endl;
 const WrongAnimal* wrongmeta = new WrongAnimal();
 const WrongAnimal* wrongj = new WrongCat();
+const WrongCat wrongi;
 std::cout << wrongj->getType() << " " << std::endl;
+std::cout << wrongi.getType() << " " << std::endl;
 std::cout << wrongmeta->getType() << " " << std::endl;
 wrongj->makeSound();
+wrongi.makeSound();
 wrongmeta->makeSound();
-delete meta;
-delete j;
-delete i;
 delete wrongj;
 delete wrongmeta;
 return 0;

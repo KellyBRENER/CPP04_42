@@ -16,18 +16,17 @@
 #ifndef AANIMAL_HPP
 #define AANIMAL_HPP
 
-class AAnimal
-{
-protected:
-	std::string	type;
-public:
-	AAnimal();
-	AAnimal(const AAnimal& src);
-	virtual ~AAnimal();
-	AAnimal&	operator=(const AAnimal& src);
-	/*member functions*/
-	virtual void	makeSound() const = 0;
-	std::string	getType() const;
+class AAnimal {
+	protected:
+		std::string	type;
+	public:
+		AAnimal();
+		AAnimal(const AAnimal& src);
+		virtual ~AAnimal();
+		AAnimal&	operator=(const AAnimal& src);
+		/*member functions*/
+		virtual void	makeSound() const = 0;//cree une methode pure qui rend animal abstrait
+		std::string	getType() const;
 };
 
 #endif

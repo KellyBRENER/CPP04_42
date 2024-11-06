@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:48:43 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/06 15:18:06 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:55:48 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Dog::Dog() : Animal() {
 
 Dog::Dog(const Dog& src) : Animal(src) {
 	std::cout<<"Dog copy constructor called"<<std::endl;
+	_brain = new Brain();
 	*this = src;
 }
 

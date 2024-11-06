@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:27:58 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/06 15:10:48 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:54:35 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Animal&	Animal::operator=(const Animal& src) {
 	std::cout<<"Animal assignation overload called"<<std::endl;
 	if (this == &src)
 		return (*this);
-	type = src.getType();
+	type = src.type;
 	return *this;
 }
 
