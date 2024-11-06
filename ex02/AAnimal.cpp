@@ -23,14 +23,14 @@ AAnimal::~AAnimal() {
 
 AAnimal::AAnimal(const AAnimal& src) {
 	std::cout<<"AAnimal copy constructor called"<<std::endl;
-	type = src.getType();
+	*this = src;
 }
 
 AAnimal&	AAnimal::operator=(const AAnimal& src) {
 	std::cout<<"AAnimal assignation overload called"<<std::endl;
 	if (this == &src)
 		return (*this);
-	type = src.getType();
+	type = src.type;
 	return *this;
 }
 

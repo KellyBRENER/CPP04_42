@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:26:19 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/04 16:15:48 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:34:18 by kbrener-         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include <iostream>
 #include <string>
@@ -23,7 +23,7 @@ protected:
 public:
 	WrongAnimal();
 	WrongAnimal(const WrongAnimal& src);
-	~WrongAnimal();
+	 virtual ~WrongAnimal();
 	WrongAnimal&	operator=(const WrongAnimal& src);
 	void	makeSound() const;
 	std::string	getType() const;

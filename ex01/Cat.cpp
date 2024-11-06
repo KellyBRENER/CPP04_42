@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
@@ -6,14 +6,14 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:49:31 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 10:16:06 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:19:36 by kbrener-         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "Cat.hpp"
 
 
-Cat::Cat() {
+Cat::Cat() : Animal() {
 	type = "cat";
 	_brain = new Brain();
 	std::cout<<"cat default constructor called"<<std::endl;
@@ -21,8 +21,7 @@ Cat::Cat() {
 
 Cat::Cat(const Cat& src) : Animal(src) {
 	std::cout<<"Cat copy constructor called"<<std::endl;
-	_brain = new Brain();
-	*_brain = src.getBrain();
+	*this = src;
 }
 
 Cat::~Cat() {
@@ -34,9 +33,9 @@ Cat&	Cat::operator=(const Cat& src) {
 	std::cout<<"Cat assignation overload called"<<std::endl;
 	if (this == &src)
 		return *this;
+	Animal::operator=(src);
 	delete _brain;
-	_brain = new Brain();
-	*_brain = src.getBrain();
+	_brain = new Brain(*src._brain);
 	return (*this);
 }
 

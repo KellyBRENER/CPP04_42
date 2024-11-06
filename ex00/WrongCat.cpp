@@ -13,7 +13,7 @@
 #include "WrongCat.hpp"
 
 
-WrongCat::WrongCat() {
+WrongCat::WrongCat() : WrongAnimal() {
 	type = "WrongCat";
 	std::cout<<"WrongCat default constructor called"<<std::endl;
 }
@@ -27,7 +27,7 @@ WrongCat::~WrongCat() {
 }
 
 WrongCat&	WrongCat::operator=(const WrongCat& src) {
-	*this = src;
+	WrongAnimal::operator=(src);
 	return (*this);
 }
 
