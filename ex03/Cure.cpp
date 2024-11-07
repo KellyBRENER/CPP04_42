@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:48:52 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 16:39:48 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:42:01 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -16,8 +16,7 @@ Cure::Cure() : AMateria("cure") {
 	std::cout<<"Cure default constructor called"<<std::endl;
 }
 
-Cure::Cure(const Cure & src) : AMateria("cure") {
-	*this = src;
+Cure::Cure(const Cure & src) : AMateria(src) {
 	std::cout<<"Cure copy constructor called"<<std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:16:13 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 16:18:29 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:28:28 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -22,13 +22,8 @@ MateriaSource::MateriaSource() {
 
 MateriaSource::MateriaSource(const MateriaSource& src) {
 	_stock = new AMateria*[4];
-	for (int i = 0; i < 4; ++i) {
-		if (src._stock[i]) {
-			_stock[i] = src._stock[i]->clone();
-		}
-		else
-			_stock[i] = NULL;
-	}
+	*this = src;
+	std::cout<<"MateriaSource copy constructor called"<<std::endl;
 }
 
 MateriaSource::~MateriaSource() {

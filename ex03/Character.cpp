@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:08:00 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 16:34:47 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:23:02 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -29,14 +29,8 @@ Character::Character(const std::string& name) : _name(name) {
 }
 
 Character::Character(const Character& src) {
-	_name = src.getName();
 	_inventory = new AMateria*[4];
-	for (int i = 0; i < 4; ++i) {
-		if (src._inventory[i])
-			_inventory[i] = src._inventory[i]->clone();
-		else
-			_inventory[i] = NULL;
-	}
+	*this = src;
 	std::cout<<"Character copy constructor called"<<std::endl;
 }
 
@@ -50,7 +44,7 @@ Character&	Character::operator=(const Character& src) {
 	if (this == &src)
 		return *this;
 	delete_AMateria_tab(_inventory);
-	_name = src.getName();
+	_name = src._name;
 	_inventory = new AMateria*[4];
 	for (int i = 0; i < 4; ++i) {
 		if (src._inventory[i])
@@ -88,6 +82,7 @@ void	Character::unequip(int idx) {
 
 void	Character::use(int idx, ICharacter& target) {
 	if (idx >= 0 && idx < 4 && _inventory[idx]) {
+		std::cout<<_name<<" use a materia :"<<std::endl;
 		_inventory[idx]->use(target);
 	}
 }

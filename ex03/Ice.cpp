@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:36:20 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 16:22:22 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:42:32 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -16,8 +16,7 @@ Ice::Ice() : AMateria("ice") {
 	std::cout<<"Ice default constructor called"<<std::endl;
 }
 
-Ice::Ice(const Ice & src) : AMateria("ice") {
-	*this = src;
+Ice::Ice(const Ice & src) : AMateria(src) {
 	std::cout<<"Ice copy constructor called"<<std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:55:51 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/05 11:03:42 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:04:53 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,6 +15,8 @@
 #include "Cat.hpp"
 
 int main() {
+	/*tesnon instanciable class :*/
+	//AAnimal	animal;
 	std::cout<<"***provided tests***\n"<<std::endl;
 	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();
